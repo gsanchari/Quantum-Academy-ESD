@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -20,7 +21,7 @@
       background-blend-mode: overlay;
       height: 100vh;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
     }
 
@@ -44,9 +45,7 @@
     }
 
     .left-section h1 {
-      margin-top: 1rem;
       font-size: 3.5rem;
-      font-family: "Freeman", sans-serif;
       color: #072464;
       text-align: center;
     }
@@ -100,17 +99,65 @@
 
     .or-text {
       text-align: center;
-      margin: 10px 0;
+      margin: 15px 0;
+      font-weight: bold;
+      color: #072464;
     }
 
-    .login-link input {
-      background-color: #28a745;
+    .social-links a {
+      margin: 10px;
+      font-size: 25px;
+      text-decoration: none;
+      color: #072464;
+      transition: color 0.3s;
     }
 
-    .login-link input:hover {
-      background-color: #1e7e34;
+    .social-links a:hover {
+      color: #0056b3;
     }
 
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #444;
+      gap: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .google-btn img {
+      height: 20px;
+    }
+
+    .login-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background-color: #072464;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      gap: 10px;
+    }
+
+    .login-btn i {
+      font-size: 20px;
+    }
+
+    .login-btn:hover {
+      background-color: #02163b;
+    }
   </style>
 </head>
 <body>
@@ -121,17 +168,25 @@
     </div>
     <div class="right-section">
       <h2>Create Account</h2>
-      <form id="signin-form" action="/signup" method="post">
+      <form id="signup-form" action="/signup" method="post">
         <input type="text" placeholder="Your Name" name="name" required />
         <input type="text" placeholder="Username" name="username" required />
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
         <input type="submit" value="Create Your Account" />
       </form>
+
       <p class="or-text">OR</p>
-      <form action="/login" class="login-link">
-        <input type="submit" value="Log in with existing account" />
-      </form>
+      <a href="/auth/google" class="google-btn">
+        <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo" />
+        Sign up with Google
+      </a>
+
+      <p class="or-text">Already have an account?</p>
+      <a href="/login" class="login-btn">
+        <i class="ri-login-circle-line"></i>
+        Login to your account
+      </a>
     </div>
   </div>
 </body>
