@@ -1,0 +1,398 @@
+/* Reset default margin and padding */
+@import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+
+/* :root {
+    --primary-color: #6366F1;
+    --accent-color: #3F83F8;
+    --text-color: #333333;
+    --link-color: #2563eb;
+    --background-color: #ffffff;
+    --light-gray: #808080;
+    --dark-gray: #555;
+} */
+
+
+
+*{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* html,body{
+  height: 100%;
+  width:100%;
+} */
+
+#navbar{
+    /* background-color: cadetblue; */
+    padding-left: 25px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* z-index: 100; */
+}
+.nav-logo{
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+/* .manu-button{
+  display: none;
+} */
+.nav-content a{
+  text-decoration: none;
+  color: inherit;
+}
+.nav-content ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    gap: 30px;
+    font-size: 15px;
+    color:#7d8385;
+    
+}
+.nav-content ul li{
+    position: relative;
+    transition: 0.6s;
+}
+.nav-content ul li:hover{
+    color:rgb(16, 16, 111);
+    cursor: pointer;
+}
+
+.nav-content ul li::after {
+  content: '';
+  position: absolute;
+  top: -25px; /* Adjust position below the text */
+  left: 0;
+  width: 0;
+  height: 4px; /* Thickness of the underline */
+  background-color: rgb(10, 10, 72);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-content ul li:hover::after {
+  width: 100%; /* Full underline width on hover */
+}
+.course-dropdown ul li::after {
+    content: none; /* Remove the underline effect from dropdown content */
+}
+
+.course-dropdown {
+    /* display: none; Hide dropdown by default */
+    padding-left: 10px;
+    position: absolute;
+    background-color: #535b65d8;
+    z-index: 10;
+    border-radius: 5px;
+    height: 90px;
+    width: 150px;
+    font-size: 20px;
+    /* transition: opacity 0.3s ease, visibility 0.3s ease; */
+    transition: all 0.35s ease;
+    visibility: hidden; /* Prevent interaction when hidden */
+    opacity: 0; /* Fully transparent */
+  }
+  
+  .course-dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-top: 20px;
+  }
+  
+  .course-dropdown ul li {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: rgb(199, 190, 190);
+  }
+  .nav-content ul li.dropdown:hover .course-dropdown {
+    display: block; /* Show dropdown on hover */
+    visibility: visible; /* Make it interactable */
+    opacity: 1; /* Fully visible */
+    transform: translateY(15px)
+  }
+
+button.login {
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px; /* Add padding for a button-like appearance */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 1s ease; /* Smooth transitions */
+}
+
+button.login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+button.login a.ki {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Inherit color from the button */
+    font-weight: bold; /* Make text bold */
+}
+
+
+
+
+.hero {
+    margin-top: 50px;
+    background-color:#002D62;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    color: #FFD700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #FFD700;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-weight: bold;
+}
+
+/* Trusted Brands */
+.trusted-brands {
+    margin-top: 20px;
+}
+
+.trusted-brands img {
+    width: 100px;
+    margin: 10px;
+}
+.course-list {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.course-list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Course Grid */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.course-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-card img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.course-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+/* Responsive Layout */
+@media screen and (max-width: 1024px) {
+    .courses {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .courses {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .courses {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    }
+}
+
+.testimonials {
+    margin-top: 50px;
+    padding: 40px 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.testimonial-card h3 {
+    color: #4A90E2;
+    font-size: 1.5rem;
+}
+.cta {
+    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: #FFD700;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#footer {
+    padding-top: 15px;
+    border-top-right-radius: 300px;
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(3, 3, 3);
+    color: white;
+    bottom: 0;
+  }
+  #head-part{
+    text-align: center;
+  }
+  #head-part h1{
+    font-size: 4rem;
+    color: white;
+  }
+  #head-part p{
+    color: #a19c9c;
+    font-size: 15px;
+  }
+  .email-box {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .email-box input {
+    padding: 30px;
+    width: 400px;
+    height: 5px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+  }
+  .email-box button {
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  #middle-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  /* .social-links{
+    width: 20%;
+  } */
+  .social-links a {
+   text-decoration: none;
+   font-size: 40px;
+   cursor: pointer;
+  }
+  .footer-links{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+  }
+  .logo img {
+    width: 100px;
+    margin: 20px auto;
+  }
+  .copyright {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  #last-part{
+    padding-top: 20px;
+    text-align: center;
+  }
